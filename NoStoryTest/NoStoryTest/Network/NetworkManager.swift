@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class NetworkManager {
     static let shared = NetworkManager()
@@ -51,5 +52,15 @@ class NetworkManager {
             }
         }
         task.resume()
+    }
+    func loadMovie2(complaction: @escaping ([Result]) -> Void) {
+        urlComponent.path = "/3/movie/popular"
+        guard let url = urlComponent.url else { return }
+        AF.request(url).responseDecodable(of: Movie.self) { response in
+            let movie = response.result
+            if let result = try? movie.get() {
+                    complaction(result.results)
+            }
+        }
     }
 }

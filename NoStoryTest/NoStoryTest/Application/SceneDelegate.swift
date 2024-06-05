@@ -18,7 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         let mainViewController = ViewController()
+        let tabBar = UITabBarController()
+        let favoritesViewController = FavoriteViewController()
         let navigationController = UINavigationController(rootViewController: mainViewController)
+        tabBar.viewControllers = [navigationController, favoritesViewController]
+        tabBar.tabBar.tintColor = .label
+        navigationController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
+        favoritesViewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), tag: 2)
         window?.rootViewController = navigationController
     }
 

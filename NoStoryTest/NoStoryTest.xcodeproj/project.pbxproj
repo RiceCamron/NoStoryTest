@@ -19,6 +19,7 @@
 		754CE3762BF50D10002DC723 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE3752BF50D10002DC723 /* MovieDetail.swift */; };
 		75A214C72BF908CA00FD4DE4 /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A214C62BF908CA00FD4DE4 /* GenreCollectionViewCell.swift */; };
 		75AB71E72BF5031A00B1D9B5 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB71E62BF5031A00B1D9B5 /* MovieDetailViewController.swift */; };
+		75D85C5F2C04D7A100386E25 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D85C5E2C04D7A100386E25 /* FavoriteViewController.swift */; };
 		75EAC64E2BFE49F8008E8C66 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAC64D2BFE49F8008E8C66 /* NetworkManager.swift */; };
 		DA74FD8818D961C017FA61C3 /* Pods_NoStoryTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CEF740345DACF758ADB284 /* Pods_NoStoryTest.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		754CE3752BF50D10002DC723 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		75A214C62BF908CA00FD4DE4 /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		75AB71E62BF5031A00B1D9B5 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		75D85C5E2C04D7A100386E25 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		75EAC64D2BFE49F8008E8C66 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F4CEF740345DACF758ADB284 /* Pods_NoStoryTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoStoryTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 		6BB7CFB02BEFB5BE008A0FCA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				75D85C5E2C04D7A100386E25 /* FavoriteViewController.swift */,
 				6B8F1C7B2BDD517F00D8E48E /* ViewController.swift */,
 			);
 			path = Controller;
@@ -284,6 +287,7 @@
 				75AB71E72BF5031A00B1D9B5 /* MovieDetailViewController.swift in Sources */,
 				6BA1606C2BE92AF600D6FD26 /* MovieTitle.swift in Sources */,
 				6BC5B9312BE68BDC00FD5548 /* UserModel.swift in Sources */,
+				75D85C5F2C04D7A100386E25 /* FavoriteViewController.swift in Sources */,
 				6B8F1C7A2BDD517F00D8E48E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,7 +433,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6YDL8MR8YN;
+				DEVELOPMENT_TEAM = 6N7MCD9LTY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -459,7 +463,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6YDL8MR8YN;
+				DEVELOPMENT_TEAM = 6N7MCD9LTY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;

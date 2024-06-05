@@ -6,16 +6,15 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
-//    var titleLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "MovieDB"
-//        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-//        label.textColor = .black
-//        return label
-//    }()
     
+    var themeCollectionView: UICollectionView = {
+       let collection = UICollectionView()
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        return collection
+    }()
     
     
     lazy var tableView: UITableView = {
@@ -35,42 +34,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-//        view.addSubview(titleLabel)
         view.addSubview(tableView)
         setupLayout()
-        //        let topTableViewConstraint = tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
-        //        let bottomTableViewConstraint = tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        //        let leftTableViewConstraint = tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
-        //        let rightTableViewConstraint = tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        
-        //        topTableViewConstraint.isActive = true
-        //        bottomTableViewConstraint.isActive = true
-        //        leftTableViewConstraint.isActive = true
-        //        rightTableViewConstraint.isActive = true
-        
-//        apiRequest()
-        NetworkManager.shared.loadMovie(theme: "") { result in
-            self.movieData = result
-        }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        NetworkManager.shared.loadMovie2() { result in
+            DispatchQueue.main.async {
+                self.movieData = result
+                self.tableView.reloadData()
+            }
         }
     }
     
     func setupLayout() {
         NSLayoutConstraint.activate([
-//            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
-//            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            //            titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-//            titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-//            titleLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: 10),
-            
-            
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
         ])
+//        tableView.snp.makeConstraints { make in
+//            make.top.bottom.leading.trailing.equalToSuperview()
+//        }
     }
     
     func apiRequest() {
@@ -132,3 +115,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(movieDetailViewController, animated: true)
     }
 }
+
